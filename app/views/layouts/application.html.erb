@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Explore" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <header class="navbar">
+        <div class="logo-container">
+          <%= image_tag "manaoag-seal.png", alt: "Manaoag Logo", class: "w-24 h-auto mx-auto" %>
+          <div class="logo-text">
+            <h1>Municipality of Manaoag</h1>
+            <p>Province of Pangasinan</p>
+          </div>
+        </div>
+
+        <div class="nav-buttons">
+          <div class="dropdown">
+            <button class="officials-btn">Barangay Officials ▼</button>
+            <div class="dropdown-content">
+              <%= link_to "Tourism", tourism_path %>
+              <%= link_to "Check Parking", checkparking_path %>
+              <%= link_to "History", history_path %>
+            </div>
+          </div>
+          <button class="things-btn">Things to Do</button>
+          <button class="things-btn">Useful Links</button>
+        </div>
+      </header>
+      <%= yield %>
+    </main>
+    <footer>
+      2025 All Rights Reserved.
+    </footer>
+  </body>
+</html>
