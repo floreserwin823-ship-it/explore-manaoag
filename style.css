@@ -1,0 +1,511 @@
+/* ====== GLOBAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.logo-text h1 {
+  font-size: 20px;
+  color: #222;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.logo-text p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.officials-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.officials-btn:hover {
+  background-color: #343534;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Buttons */
+.things-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.things-btn:hover {
+  background-color: #0056b3;
+}
+
+/* ====== HERO SECTION WITH IMAGE ====== */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('manaoag\ 2.jpg'); /* 🔹 Replace with your image file */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Optional overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Text content stays above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+
+.hero-buttons button {
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-buttons button:hover {
+  background: #ddd;
+}
+
+/* ====== MAYOR & HISTORY SECTIONS ====== */
+.mayor-section, .history-section {
+  padding: 80px 60px;
+}
+
+.mayor-container, .history-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.mayor-text, .history-text {
+  flex: 1 1 50%;
+}
+
+.mayor-text h2, .history-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.mayor-text p, .history-text p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.mayor-photo img, .history-photo img {
+  width: 480px;
+  max-width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.mayor-photo img:hover, .history-photo img:hover {
+  transform: scale(1.03);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .mayor-container, .history-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .officials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .official-card {
+    width: 80%;
+  }
+}
+/* Mayor section and photo styling */
+.mayor-section {
+  padding: 80px 60px;
+  background-color: #f9f9f9;
+}
+
+.mayor-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.mayor-photo {
+  flex: 0 0 380px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.mayor-photo img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.mayor-photo img:hover {
+  transform: scale(1.05);
+}
+
+.social-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.social-btn {
+  flex: 1;
+  max-width: 150px;
+  background-color: #b22222;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-btn:hover {
+  background-color: #7a1212;
+}
+
+.facebook-btn i,
+.website-btn i {
+  font-size: 18px;
+}
+
+.mayor-text {
+  flex: 1;
+  max-width: 520px;
+  color: #222;
+}
+
+.mayor-text h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #003366;
+}
+
+.mayor-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.mayor-text h3 {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #003366;
+}
+
+.mayor-text em {
+  font-style: italic;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mayor-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mayor-text {
+    max-width: 100%;
+  }
+  .mayor-text p {
+    text-align: center;
+  }
+  .social-buttons {
+    justify-content: center;
+  }
+}
+/* ====== OFFICIALS SOCIAL CONTAINER ====== */
+.social-container {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: background 0.3s;
+}
+
+.facebook-btn {
+  background-color: #3b5998;
+}
+
+.facebook-btn:hover {
+  background-color: #2d4373;
+}
+
+.website-btn {
+  background-color: #555;
+}
+
+.website-btn:hover {
+  background-color: #333;
+}
+
+.social-btn i {
+  font-size: 16px;
+}
+/* ====== COUNCILORS CARDS ====== */
+.councilors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  background-color: #f0f4f8;
+}
+
+.councilor-card {
+  width: 250px; /* bigger card */
+  text-align: center;
+  border: 3px solid #003366; /* stylish border */
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  background-color: #fff;
+}
+
+.councilor-card img {
+  width: 100%;
+  height: 300px; /* bigger image */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #003366; /* border around image */
+}
+
+.councilor-card h3 {
+  margin-bottom: 8px;
+  color: #003366;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.councilor-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+.councilor-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  border-color: #0055aa;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .councilor-card {
+    width: 220px;
+  }
+  .councilor-card img {
+    height: 270px;
+  }
+}
+
+@media (max-width: 768px) {
+  .councilors-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .councilor-card {
+    width: 90%;
+  }
+  .councilor-card img {
+    height: auto;
+  }
+}
+/* Councilors Section Header */
+.councilors-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.councilors-header .section-title {
+  font-size: 36px;
+  color: #003366;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.councilors-header .section-description {
+  font-size: 18px;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.councilors-header {
+  text-align: center;
+  background-color: black; /* dark background */
+  color: white;
+  padding: 40px 20px;
+  border-bottom: 3px solid #f1f1f1; /* thin white line like in image */
+}
+
+.councilors-header .section-title {
+  font-size: 50px; /* large text */
+  font-weight: 900;
+  text-transform: uppercase; /* ALL CAPS */
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: white; /* ensures visibility */
+}
+
+.councilors-header .section-description {
+  font-size: 18px;
+  color: white; /* lighter gray text */
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
