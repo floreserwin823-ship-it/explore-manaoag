@@ -23,6 +23,33 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <header class="navbar">
+        <div class="logo-container">
+          <%= image_tag "manaoag-seal.png", alt: "Manaoag Logo", class: "w-24 h-auto mx-auto" %>
+          <div class="logo-text">
+            <h1>Municipality of Manaoag</h1>
+            <p>Province of Pangasinan</p>
+          </div>
+        </div>
+
+        <div class="nav-buttons">
+          <div class="dropdown">
+            <button class="officials-btn">Barangay Officials ▼</button>
+            <div class="dropdown-content">
+              <%= link_to "Tourism", tourism_path %>
+              <%= link_to "Check Parking", checkparking_path %>
+              <%= link_to "History", history_path %>
+            </div>
+          </div>
+          <button class="things-btn">Things to Do</button>
+          <button class="things-btn">Useful Links</button>
+        </div>
+      </header>
+      <%= yield %>
+    </main>
+    <footer>
+      2025 All Rights Reserved.
+    </footer>
   </body>
 </html>
